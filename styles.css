@@ -1,0 +1,52 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#bingo-container {
+    text-align: center;
+}
+
+#bingo-heading {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+}
+
+#bingo-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.bingo-square {
+    width: 95px;
+    height: 95px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.free-space {
+    background-color: purple;
+    color: white;
+}
+
+#randomize-button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

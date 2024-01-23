@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mardi Gras Bingo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div id="bingo-container">
+    <div id="bingo-heading">Mardi Gras Bingo</div>
+
+    <div id="bingo-card"></div>
+
+    <button id="randomize-button" onclick="randomizeBingoCard()">Randomize Words</button>
+</div>
+
+ <!-- Add this script section inside the <head> or before the closing </body> tag -->
+<script>
+   const words = [
+    "Revelry", "Parades", "Beads", "Masquerade", "Carnivals", "Jazz", "Costumes", "Floats", "Masks", "Festive",
+    "Feathers", "Krewe", "Bourbon Street", "King Cake", "Flamboyant", "Zydeco", "Traditions", "Colorful", "Gifts", "Crowns",
+    "Queen", "Celebration", "Harmony", "Regalia", "Party"
+];
+
+
+    function randomizeBingoCard() {
+        const shuffledWords = shuffleArray(words);
+        const bingoCard = document.getElementById('bingo-card');
+        bingoCard.innerHTML = '';
+
+        for (let row = 0; row < 5; row++) {
+            for (let col = 0; col < 5; col++) {
+                const square = document.createElement('div');
+                square.className = 'bingo-square';
+                const index = row * 5 + col;
+                const word = shuffledWords[index];
+
+                if (row === Math.floor(5 / 2) && col === Math.floor(5 / 2)) {
+                    square.classList.add('free-space');
+                } else {
+                    square.innerText = word !== undefined ? word : '';
+                }
+
+                square.style.backgroundColor = getRandomColor(); // Set random background color
+                bingoCard.appendChild(square);
+            }
+        }
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+    
+
+</body>
+</html>
+
