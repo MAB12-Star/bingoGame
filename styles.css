@@ -95,14 +95,15 @@ body {
 
 .crowned::before {
     content: '';
-    background-image: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg5NTcyNDQtaW1hZ2Utam9iNjIzLWwxcHFjMmQ1LnBuZw.png');
-    background-size: cover;
+    background-color: yellow; /* Set the background color to yellow */
+    border-radius: 50%; /* Create a circular shape */
     position: absolute;
     top: 5%; /* Adjust the position as needed */
     left: 5%; /* Adjust the position as needed */
     width: 90%; /* Adjust the size as needed */
     height: 90%; /* Adjust the size as needed */
 }
+
 
 
 #randomize-button {
