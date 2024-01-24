@@ -94,14 +94,13 @@ body {
 }
 
 .crowned::before {
-    content: '';
-    background-color: yellow; /* Set the background color to yellow */
-    border-radius: 50%; /* Create a circular shape */
+    content: '\1F451'; /* Crown emoji character */
+    font-size: 75px;
+    color: purple;
     position: absolute;
-    top: 5%; /* Adjust the position as needed */
-    left: 5%; /* Adjust the position as needed */
-    width: 90%; /* Adjust the size as needed */
-    height: 90%; /* Adjust the size as needed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
