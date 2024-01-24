@@ -68,6 +68,15 @@
         }
         return color;
     }
+
+    function toggleCrown(square) {
+        // Check if the square already has a crown, if yes, remove it; otherwise, add it
+        if (square.classList.contains('crowned')) {
+            square.classList.remove('crowned');
+        } else {
+            square.classList.add('crowned');
+        }
+    }
 </script>
 
     
