@@ -11,22 +11,24 @@
     <video id="video-background" autoplay muted>
         <source src="BingoGame/carnival.mp4" type="video/mp4">
     </video>
+    
 <div id="bingo-container">
-    <div id="bingo-heading">Mardi Gras Bingo</div>
+    <div id="bingo-heading">Three Kings Bingo</div>
 
     <div id="bingo-card"></div>
 
-    <button id="randomize-button" onclick="randomizeBingoCard()">Randomize Words</button>
+    <button id="randomize-button" onclick="randomizeBingoCard()">Build Your Bingo Card</button>
 </div>
 
- <!-- Add this script section inside the <head> or before the closing </body> tag -->
-<script>
-   const words = [
-    "Revelry", "Parades", "Beads", "Masquerade", "Carnivals", "Jazz", "Costumes", "Floats", "Masks", "Festive",
-    "Feathers", "Krewe", "Bourbon Street", "King Cake", "Flamboyant", "Zydeco", "Traditions", "Colorful", "Gifts", "Crowns",
-    "Queen", "Celebration", "Harmony", "Regalia", "Party"
-];
 
+
+<!-- Add this script section inside the <head> or before the closing </body> tag -->
+<script>
+    const words = [
+        "Revelry", "Parades", "Beads", "Masquerade", "Carnivals", "Jazz", "Costumes", "Floats", "Masks", "Festive",
+        "Feathers", "Krewe", "Bourbon Street", "King Cake", "Flamboyant", "Zydeco", "Traditions", "Colorful", "Gifts", "Crowns",
+        "Queen", "Celebration", "Harmony", "Regalia", "Party"
+    ];
 
     function randomizeBingoCard() {
         const shuffledWords = shuffleArray(words);
@@ -44,6 +46,10 @@
                     square.classList.add('free-space');
                 } else {
                     square.innerText = word !== undefined ? word : '';
+                    // Add click event listener to each square
+                    square.addEventListener('click', function() {
+                        toggleCrown(square);
+                    });
                 }
 
                 square.style.backgroundColor = getRandomColor(); // Set random background color
@@ -61,13 +67,13 @@
     }
 
     function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+    const letters = '89ABCDEF'; // Adjusted the letters to generate brighter colors
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * letters.length)];
     }
+    return color;
+}
 
     function toggleCrown(square) {
         // Check if the square already has a crown, if yes, remove it; otherwise, add it
@@ -78,8 +84,6 @@
         }
     }
 </script>
-
-    
 
 </body>
 </html>
