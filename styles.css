@@ -94,15 +94,16 @@ body {
 }
 
 .crowned::before {
-    content: '\1F451'; /* Crown emoji character */
-    font-size: 75px;
-    color: purple;
+    content: '';
+    background-image: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcHg5NTcyNDQtaW1hZ2Utam9iNjIzLWwxcHFjMmQ1LnBuZw.png');
+    background-size: cover;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
+    top: 5%; /* Adjust the position as needed */
+    left: 5%; /* Adjust the position as needed */
+    width: 90%; /* Adjust the size as needed */
+    height: 90%; /* Adjust the size as needed */
 }
+
 
 #randomize-button {
     margin-top: 20px;
